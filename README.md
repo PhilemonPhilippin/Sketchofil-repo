@@ -50,7 +50,7 @@ The Daily Sketch Website is designed for users who love to draw and share their 
 
 - Loads public sketches dynamically with paginated API responses.
 
-### 7. **User Authentication: Auth0**
+### 7. **User Authentication: ASP.NET Identity**
 
 - Provides secure login functionality and manages user accounts.
 
