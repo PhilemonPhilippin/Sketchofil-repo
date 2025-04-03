@@ -9,23 +9,22 @@ string dbServerPw = Environment.GetEnvironmentVariable(environmentVariableName, 
 string connectionString = $"Host=localhost;Port=5432;Database=Sketchofil;User ID=postgres;Password={dbServerPw};";
 
 builder.Services.AddDbContext<ApplicationDbContext>(
-    options => options.UseNpgsql(connectionString));
+options => options.UseNpgsql(connectionString));
 
 builder.Services.AddAuthorization();
 
 builder.Services.AddIdentityApiEndpoints<CustomUser>()
-    .AddEntityFrameworkStores<ApplicationDbContext>();
+.AddEntityFrameworkStores<ApplicationDbContext>();
 
 builder.Services.AddControllers();
-// Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
+
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
 
 var app = builder.Build();
 
-app.MapIdentityApi<CustomUser>();
+app.MapGroup("/api").MapIdentityApi<CustomUser>();
 
-// Configure the HTTP request pipeline.
 if (app.Environment.IsDevelopment())
 {
     app.UseSwagger();
@@ -33,6 +32,7 @@ if (app.Environment.IsDevelopment())
 }
 
 app.UseHttpsRedirection();
+
 
 app.UseAuthorization();
 

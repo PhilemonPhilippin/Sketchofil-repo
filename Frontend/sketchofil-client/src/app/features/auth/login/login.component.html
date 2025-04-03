@@ -1,0 +1,19 @@
+<div class="login">
+  <h1>Login</h1>
+  <div>
+    <label for="email">Email: </label>
+    <input id="email" type="text" [formControl]="email" class="input" />
+  </div>
+  <div>
+    <label for="password">Password: </label>
+    <input
+      id="password"
+      type="password"
+      [formControl]="password"
+      class="input"
+    />
+  </div>
+  <div>
+    <button class="btn" (click)="login()">Login</button>
+  </div>
+</div>
