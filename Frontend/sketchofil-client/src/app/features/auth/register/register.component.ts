@@ -4,36 +4,32 @@ import { FormGroup, FormControl, ReactiveFormsModule } from '@angular/forms';
 import { MatInputModule } from '@angular/material/input';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatButtonModule } from '@angular/material/button';
-import { Router } from '@angular/router';
-import { LoginRequest } from '../../../models/contracts/requests/login-request';
+import { RegisterRequest } from '../../../models/contracts/requests/register-request';
 
 @Component({
-  selector: 'app-login',
+  selector: 'app-register',
   imports: [
     ReactiveFormsModule,
     MatFormFieldModule,
     MatInputModule,
     MatButtonModule,
   ],
-  templateUrl: './login.component.html',
-  styleUrl: './login.component.css',
+  templateUrl: './register.component.html',
+  styleUrl: './register.component.css',
 })
-export class LoginComponent {
+export class RegisterComponent {
   private authService = inject(AuthService);
-  private router = inject(Router);
 
-  loginForm = new FormGroup({
+  registerForm = new FormGroup({
     email: new FormControl(''),
     password: new FormControl(''),
   });
 
   onSubmit() {
-    const userInput: LoginRequest = {
-      email: this.loginForm.value.email || '',
-      password: this.loginForm.value.password || '',
+    const userInput: RegisterRequest = {
+      email: this.registerForm.value.email || '',
+      password: this.registerForm.value.password || '',
     };
-    this.authService.login(userInput).subscribe((response) => {
-      this.router.navigate(['/']);
-    });
+    this.authService.register(userInput).subscribe();
   }
 }

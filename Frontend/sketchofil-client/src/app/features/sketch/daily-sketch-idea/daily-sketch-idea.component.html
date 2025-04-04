@@ -1,4 +1,6 @@
 <div class="daily-sketch-idea">
-  <h1>Daily sketch</h1>
-  <p>{{ sketchIdea }}</p>
+  <h2>Daily sketch</h2>
+  @if (sketchIdea$ | async; as sketchIdea) {
+  <p>Sketch Idea : {{ sketchIdea }}</p>
+  }
 </div>

@@ -1,39 +1,55 @@
 @import url("https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400..800;1,400..800&display=swap");
 @import "tailwindcss";
 
-@plugin "daisyui";
-
 @theme {
   --font-garamond: "EB Garamond", serif;
   --font-helvetica: "Helvetica", sans-serif;
   --color-light-black: #343434;
-  --color-dark-blue: #4f6d7a;
-  --color-light-blue: #3e78b2;
-  --color-lighter-blue: #c0d6df;
-  --color-light-grey: #eaeaea;
-  --color-dark-grey: #b3b3b3;
-  --color-light-red: #ea9e8d;
+  --color-dark-purple: #160f29;
+  --color-caribbean: #246a73;
+  --color-dark-cyan: #368f8b;
+  --color-champagne: #f3dfc1;
+  --color-desert-sand: #ddbea8;
 }
 
 .body {
+  padding: 8px;
   box-sizing: border-box;
   font-size: 1rem;
-  font-family: var(--font-garamond);
   color: white;
   background-color: var(--color-light-black);
-  /* overflow-x: hidden; */
   min-height: 100vh;
   display: grid;
   /* change layout proportions here in the grid template : */
   grid-template-rows: 100px auto 50px;
+  /* font-family: var(--font-garamond); */
+  /* overflow-x: hidden; */
 }
 
-h1,
-h2,
-h3,
-h4,
-h5,
+h1 {
+  font-size: 2rem;
+}
+h2 {
+  font-size: 1.8rem;
+}
+h3 {
+  font-size: 1.6rem;
+}
+h4 {
+  font-size: 1.4rem;
+}
+h5 {
+  font-size: 1.3rem;
+}
 h6 {
-  font-family: "Helvetica";
-  font-size: 2.25rem;
+  font-size: 1.2rem;
+}
+
+html,
+body {
+  height: 100%;
+}
+body {
+  margin: 0;
+  font-family: Roboto, "Helvetica Neue", sans-serif;
 }
