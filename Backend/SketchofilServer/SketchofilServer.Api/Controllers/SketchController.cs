@@ -17,5 +17,14 @@ namespace SketchofilServer.Api.Controllers
             var json = JsonSerializer.Serialize(dailySketchIdea);
             return Ok(json);
         }
+
+        [Authorize(Policy = "RequireAdminRole")]
+        [HttpGet("admin-test")]
+        public IActionResult GetAdminTest()
+        {
+            string adminTest = "This is an admin test";
+            var json = JsonSerializer.Serialize(adminTest);
+            return Ok(json);
+        }
     }
 }
