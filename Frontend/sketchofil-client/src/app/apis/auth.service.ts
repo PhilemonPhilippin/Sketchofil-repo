@@ -11,13 +11,18 @@ export class AuthService {
   private http = inject(HttpClient);
 
   login(userInput: LoginRequest): Observable<unknown> {
-    const uri = 'api/login?useCookies=true';
+    const uri = 'api/auth/login?useCookies=true';
 
-    return this.http.post(uri, userInput, { withCredentials: true });
+    return this.http.post(uri, userInput);
   }
 
   register(userInput: RegisterRequest): Observable<unknown> {
-    const uri = 'api/register';
+    const uri = 'api/auth/register';
     return this.http.post(uri, userInput);
+  }
+
+  logout(): Observable<unknown> {
+    const uri = 'api/auth/logout';
+    return this.http.post(uri, {});
   }
 }

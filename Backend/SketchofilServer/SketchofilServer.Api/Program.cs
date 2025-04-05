@@ -1,5 +1,6 @@
 using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
+using SketchofilServer.Core.Database;
 using SketchofilServer.Core.Database.Models;
 
 public class Program
@@ -34,7 +35,7 @@ public class Program
 
         var app = builder.Build();
 
-        app.MapGroup("/api").MapIdentityApi<CustomUser>();
+        app.MapGroup("/api/auth").MapIdentityApi<CustomUser>();
 
         if (app.Environment.IsDevelopment())
         {

@@ -10,11 +10,11 @@ export class SketchService {
 
   getDailySketchIdea(): Observable<string> {
     const uri = 'api/sketch/daily-idea';
-    return this.http.get<string>(uri, { withCredentials: true });
+    return this.http.get<string>(uri);
   }
 
   getAdminTest(): Observable<string> {
-    const uri = "api/sketch/admin-test";
-    return this.http.get<string>(uri, { withCredentials: true });
+    const uri = 'api/sketch/admin-test';
+    return this.http.get<string>(uri);
   }
 }

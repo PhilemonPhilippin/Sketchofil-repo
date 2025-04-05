@@ -26,6 +26,7 @@ The Daily Sketch Website is designed for users who love to draw and share their 
 - Single-page application (SPA) for seamless user experience.
 - Displays daily sketch ideas, uploaded sketches, and comments.
 - Tailwind CSS for modern and responsive styling.
+- Angular Material for designing UI components quickly.
 
 ### 2. **Backend: ASP.NET API**
 

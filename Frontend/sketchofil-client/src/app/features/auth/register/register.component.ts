@@ -5,6 +5,7 @@ import { MatInputModule } from '@angular/material/input';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatButtonModule } from '@angular/material/button';
 import { RegisterRequest } from '../../../models/contracts/requests/register-request';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-register',
@@ -19,6 +20,7 @@ import { RegisterRequest } from '../../../models/contracts/requests/register-req
 })
 export class RegisterComponent {
   private authService = inject(AuthService);
+  private router = inject(Router);
 
   registerForm = new FormGroup({
     email: new FormControl(''),
@@ -30,6 +32,8 @@ export class RegisterComponent {
       email: this.registerForm.value.email || '',
       password: this.registerForm.value.password || '',
     };
-    this.authService.register(userInput).subscribe();
+    this.authService.register(userInput).subscribe((response) => {
+      this.router.navigate(['/auth/login']);
+    });
   }
 }
