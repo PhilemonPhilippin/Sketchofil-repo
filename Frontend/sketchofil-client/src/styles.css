@@ -1,9 +1,6 @@
-@import url("https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400..800;1,400..800&display=swap");
 @import "tailwindcss";
 
 @theme {
-  --font-garamond: "EB Garamond", serif;
-  --font-helvetica: "Helvetica", sans-serif;
   --color-light-black: #343434;
   --color-dark-purple: #160f29;
   --color-caribbean: #246a73;
@@ -13,7 +10,6 @@
 }
 
 .body {
-  padding: 8px;
   box-sizing: border-box;
   font-size: 1rem;
   color: white;
@@ -21,9 +17,7 @@
   min-height: 100vh;
   display: grid;
   /* change layout proportions here in the grid template : */
-  grid-template-rows: 100px auto 50px;
-  /* font-family: var(--font-garamond); */
-  /* overflow-x: hidden; */
+  grid-template-rows: 75px auto;
 }
 
 h1 {

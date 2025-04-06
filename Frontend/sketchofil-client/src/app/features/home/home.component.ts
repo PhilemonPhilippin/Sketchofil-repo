@@ -3,9 +3,9 @@ import { DailySketchIdeaComponent } from '../sketch/daily-sketch-idea/daily-sket
 import { AdminTestComponent } from '../sketch/admin-test/admin-test.component';
 
 @Component({
-    selector: 'app-home',
-    imports: [DailySketchIdeaComponent, AdminTestComponent],
-    templateUrl: './home.component.html',
-    styleUrl: './home.component.css'
+  selector: 'app-home',
+  imports: [DailySketchIdeaComponent, AdminTestComponent],
+  templateUrl: './home.component.html',
+  styleUrl: './home.component.css',
 })
 export class HomeComponent {}

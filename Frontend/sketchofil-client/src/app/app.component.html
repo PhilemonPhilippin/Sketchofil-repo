@@ -1,11 +1,6 @@
 <div class="body">
-  <header>
-    <p>Test Header</p>
-  </header>
+  <app-header [isLoggedIn]="authService.loggedIn"></app-header>
   <main>
     <router-outlet />
   </main>
-  <footer>
-    <p>Test Footer</p>
-  </footer>
 </div>

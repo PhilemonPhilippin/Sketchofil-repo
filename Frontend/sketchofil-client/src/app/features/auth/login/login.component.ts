@@ -3,8 +3,7 @@ import { AuthService } from '../../../apis/auth.service';
 import { FormGroup, FormControl, ReactiveFormsModule } from '@angular/forms';
 import { MatInputModule } from '@angular/material/input';
 import { MatFormFieldModule } from '@angular/material/form-field';
-import { MatButtonModule } from '@angular/material/button';
-import { Router } from '@angular/router';
+import { Router, RouterLink } from '@angular/router';
 import { LoginRequest } from '../../../models/contracts/requests/login-request';
 
 @Component({
@@ -13,7 +12,7 @@ import { LoginRequest } from '../../../models/contracts/requests/login-request';
     ReactiveFormsModule,
     MatFormFieldModule,
     MatInputModule,
-    MatButtonModule,
+    RouterLink,
   ],
   templateUrl: './login.component.html',
   styleUrl: './login.component.css',
@@ -32,7 +31,7 @@ export class LoginComponent {
       email: this.loginForm.value.email || '',
       password: this.loginForm.value.password || '',
     };
-    this.authService.login(userInput).subscribe((response) => {
+    this.authService.login(userInput).subscribe(() => {
       this.router.navigate(['/']);
     });
   }

@@ -1,7 +1,7 @@
 <div class="register">
   <h2>Register</h2>
-  <form [formGroup]="registerForm" class="example-form" (ngSubmit)="onSubmit()">
-    <mat-form-field class="example-full-width">
+  <form [formGroup]="registerForm" class="form mb-5" (ngSubmit)="onSubmit()">
+    <mat-form-field class="full-width">
       <mat-label>Email</mat-label>
       <input
         matInput
@@ -10,14 +10,22 @@
         formControlName="email"
       />
     </mat-form-field>
-    <mat-form-field class="example-full-width">
+    <mat-form-field class="full-width">
       <mat-label>Password</mat-label>
       <input matInput type="password" formControlName="password" />
     </mat-form-field>
     <div class="example-button-row">
-      <button type="submit" [disabled]="!registerForm.valid" mat-stroked-button>
+      <button
+        type="submit"
+        [disabled]="!registerForm.valid"
+        class="bg-dark-cyan hover:bg-blue-700 text-white font-bold py-2 px-4 rounded-full"
+      >
         REGISTER
       </button>
     </div>
   </form>
+  <div class="already-account">
+    Already an account ?
+    <a class="underline" routerLink="/auth/login">Login</a>
+  </div>
 </div>

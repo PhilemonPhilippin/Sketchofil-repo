@@ -22,4 +22,14 @@ public class AuthController(SignInManager<CustomUser> signInManager) : Controlle
         }
         return Results.Unauthorized();
     }
+
+    [HttpPost("login-check")]
+    public IResult LoginCheck([FromBody] object empty)
+    {
+        if (empty is not null)
+        {
+            return Results.Ok();
+        }
+        return Results.Unauthorized();
+    }
 }
