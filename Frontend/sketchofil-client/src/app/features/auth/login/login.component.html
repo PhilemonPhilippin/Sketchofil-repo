@@ -1,5 +1,6 @@
 <div class="login">
-  <h2>Login</h2>
+  <h1>Login</h1>
+  @if (isLoggedIn === false) {
   <form [formGroup]="loginForm" class="form mb-5" (ngSubmit)="onSubmit()">
     <mat-form-field class="full-width">
       <mat-label>Email</mat-label>
@@ -28,4 +29,7 @@
     No account yet ?
     <a class="underline" routerLink="/auth/register">Register</a>
   </div>
+  } @else {
+  <p>You are already logged in.</p>
+  }
 </div>

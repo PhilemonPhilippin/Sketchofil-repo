@@ -15,24 +15,22 @@
         </button>
         <mat-menu #menu="matMenu">
           <button mat-menu-item routerLink="/">Home</button>
+          <button mat-menu-item routerLink="/admin">Admin</button>
         </mat-menu>
       </div>
-      <div class="auth-button">
-        @if (!isLoggedIn) {
+      <div class="auth-buttons">
         <button
           routerLink="/auth/login"
           class="bg-dark-cyan hover:bg-blue-700 text-white font-bold py-2 px-4 rounded-full"
         >
           Login
         </button>
-        } @if (isLoggedIn) {
         <a routerLink="/auth/logout" class="ms-3"
           ><mat-icon
             style="color: var(--color-red-400)"
             fontIcon="logout"
           ></mat-icon
         ></a>
-        }
       </div>
     </div>
   </header>

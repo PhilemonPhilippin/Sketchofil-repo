@@ -1,5 +1,6 @@
 <div class="logout">
-  <h2>Logout</h2>
+  <h1>Logout</h1>
+  @if (isLoggedIn) {
   <p class="mb-3">Are you sure you want to logout ?</p>
   <button
     (click)="logout()"
@@ -7,4 +8,7 @@
   >
     LOGOUT
   </button>
+  } @else {
+  <p>You are not logged in yet.</p>
+  }
 </div>
